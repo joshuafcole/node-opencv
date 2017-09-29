@@ -197,6 +197,7 @@ NAN_METHOD(Contour::MinAreaRect) {
   Local<Object> center = Nan::New<Object>();
   center->Set(Nan::New("x").ToLocalChecked(), Nan::New<Number>(minimum.center.x));
   center->Set(Nan::New("y").ToLocalChecked(), Nan::New<Number>(minimum.center.y));
+  rect->Set(Nan::New("center").ToLocalChecked(), center);
 
   v8::Local<v8::Array> points = Nan::New<Array>(4);
 
